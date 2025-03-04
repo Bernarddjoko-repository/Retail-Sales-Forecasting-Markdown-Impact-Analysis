@@ -17,7 +17,7 @@ The dataset consists of three main sources:<br>
 2️⃣ Features Dataset → Includes weekly economic data (CPI, Unemployment, Fuel Price), markdowns, and holiday indicators.<br>
 3️⃣ Sales Dataset → Historical weekly sales data for each department in each store from 2010-02-05 to 2012-11-01.<br>
 
-Key Business Holidays included:<br>
+### Key Business Holidays included:<br>
 📌 Super Bowl<br>
 📌 Labor Day<br>
 📌 Thanksgiving<br>
@@ -25,45 +25,45 @@ Key Business Holidays included:<br>
 
 📌 Holiday weeks are given 5x weight in model evaluation since they significantly impact business revenue.<br>
 
-📌 Business Problem
+### 📌 Business Problem
 Why is this project important?<br>
 
 📌 Retailers need accurate demand forecasting to avoid overstocking or understocking products.<br>
 📌 Markdowns (discounts) impact sales, but how much? We need a model that predicts their effect.<br>
 📌 Holidays have a major impact on sales, but there is limited historical data.<br>
 
-❓ Business Questions to Answer
+### ❓ Business Questions to Answer
 1️⃣ How can we accurately predict next year's sales?<br>
 2️⃣ How do markdowns affect sales, especially during holidays?<br>
 3️⃣ What strategies can we use to improve markdown efficiency and optimize inventory?<br>
 
-📌 Step-by-Step Approach
+## 📌 Step-by-Step Approach
+
 🔹 1️⃣ Data Preparation
 ✅ Handled missing values:<br>
+    - Filled missing markdowns with 0 (assuming no markdown).<br>
+    - Used rolling mean for missing CPI and Unemployment data to smooth fluctuations.<br>
 
-Filled missing markdowns with 0 (assuming no markdown).<br>
-Used rolling mean for missing CPI and Unemployment data to smooth fluctuations.<br>
 ✅ Handled outliers:<br>
+    - Winsorization (limiting extreme values) for robust models.<br>
 
-Winsorization (limiting extreme values) for robust models.<br>
 ✅ Merged all datasets into one feature-rich dataset for analysis.<br>
 
 🔹 2️⃣ Feature Engineering
 We created several new features to improve model performance:<br>
 
 ✅ Time-based Features:
-
 Year, Month, Week, Day of the Week, IsWeekend to capture seasonality.<br>
+
 ✅ Lag Features:
-
 Lag_1, Rolling_4, Rolling_12, Lag_52 to track sales trends over time.<br>
+
 ✅ Holiday Features:
-
 Super Bowl, Thanksgiving, Christmas, Labor Day indicators.<br>
-✅ Total Markdown Impact:
 
-Summed markdown values across different promotions.<br>
-Created a feature to measure markdowns during holiday weeks.<br>
+✅ Total Markdown Impact:
+    - Summed markdown values across different promotions.<br>
+    - Created a feature to measure markdowns during holiday weeks.<br>
 🔹 3️⃣ Feature Selection & Scaling
 📌 Used Random Forest Feature Importance to remove low-impact variables.<br>
 📌 Dropped highly correlated features to avoid redundancy.<br>
@@ -73,7 +73,6 @@ Created a feature to measure markdowns during holiday weeks.<br>
 Since this is a time-series problem, we cannot use random splitting.<br>
 ✅ Training Data: 2010 - 2011<br>
 ✅ Testing Data: 2012<br>
-
 This ensures real-world predictive performance by simulating how a business would forecast future sales.<br>
 
 🔹 5️⃣ Model Training
@@ -91,7 +90,7 @@ We trained multiple models to compare performance:<br>
 📌 SARIMA (Seasonal ARIMA for long-term forecasting).<br>
 📌 Exponential Smoothing (Captures seasonal sales trends).<br>
 
-📌 Challenges & Solutions
+## 📌 Challenges & Solutions
 1️⃣ Limited Holiday Data
 🔹 Issue: Holidays only occur once a year, making it difficult for models to learn patterns.<br>
 🔹 Solution: Used weighted loss function to prioritize holiday weeks during training.<br>
@@ -108,48 +107,49 @@ We trained multiple models to compare performance:<br>
 🔹 Issue: SARIMA took a long time to train on large datasets.<br>
 🔹 Solution: Ran initial tests on smaller samples and optimized hyperparameters.<br>
 
-📌 Results
+## 📌 Results
 📌 XGBoost performed best for overall sales forecasting.<br>
 📌 Weighted Loss significantly improved holiday week predictions.<br>
 📌 SARIMA was slow but useful for capturing long-term seasonality.<br>
 
-📌 Future Work
+## 📌 Future Work
 🔹 Deep Learning Models → Implement LSTMs or Transformers for advanced sequential learning.<br>
 🔹 A/B Testing for Markdown Strategies → Experiment with markdown levels to optimize revenue.<br>
 🔹 Automated Model Retraining → Set up a pipeline to update predictions as new data arrives.<br>
 
-📌 Installation & How to Run
+##📌 Installation & How to Run
 bash
 Copy
 Edit
-# Clone the Repository  
+### Clone the Repository  
 git clone https://github.com/your-github-username/Retail-Sales-Forecasting.git  
 cd Retail-Sales-Forecasting  
 
-# Install Dependencies  
+### Install Dependencies  
 pip install -r requirements.txt  
 
-# Run Data Preparation & Feature Engineering  
+### Run Data Preparation & Feature Engineering  
 python data_preprocessing.py  
 
-# Train Machine Learning Models  
+### Train Machine Learning Models  
 python train_models.py  
 
-# Train Time-Series Models  
+### Train Time-Series Models  
 python train_time_series.py  
 
-# Evaluate Model Performance  
+### Evaluate Model Performance  
 python evaluate_models.py  
 
-# Visualize Results  
+### Visualize Results  
 python visualize_results.py  
-📌 Key Takeaways
+
+## 📌 Key Takeaways
 ✅ Real-world business impact: Improves retail sales forecasting & markdown optimization.<br>
 ✅ Advanced Machine Learning & Time-Series Forecasting applied.<br>
 ✅ Tackles challenges like seasonal demand shifts & sparse holiday data.<br>
 ✅ Scalable to real-world applications like demand forecasting & pricing optimization.<br>
 
-📌 Why This Project Stands Out to Hiring Managers
+## 📌 Why This Project is Important:
 ✔ Real Business Application → Helps retailers reduce losses and maximize profit.<br>
 ✔ Advanced Data Science Techniques → Machine Learning + Time-Series + Feature Engineering.<br>
 ✔ Proves Forecasting & Analytical Skills → Essential for roles in Retail Analytics, Demand Forecasting, and Predictive Modeling.<br>
