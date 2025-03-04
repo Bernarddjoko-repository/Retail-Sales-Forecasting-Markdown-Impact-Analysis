@@ -1,8 +1,8 @@
 ![Sales Prediction](https://github.com/user-attachments/assets/1b4312a8-4f57-4ed5-b9b1-8107142b4a42)
 
-📌 Retail Sales Forecasting & Markdown Impact Analysis
+# 📌 Retail Sales Forecasting & Markdown Impact Analysis
 🔹 Predicting Sales & Understanding Markdown Effects for Better Retail Decisions
-📌 Introduction
+## 📌 Introduction
 Retail businesses rely on historical sales data to make key decisions about inventory, promotions, and markdowns.<br> However, sales forecasting is challenging due to seasonal variations, economic factors, and unpredictable consumer behavior.<br>
 
 This project tackles these challenges by using machine learning and time-series forecasting to:<br>
@@ -10,7 +10,7 @@ This project tackles these challenges by using machine learning and time-series 
 ✅ Model the impact of markdowns on holiday weeks to optimize promotions.<br>
 ✅ Improve revenue strategies by analyzing the effects of holidays and economic factors.<br>
 
-📌 Dataset Overview
+## 📌 Dataset Overview
 The dataset consists of three main sources:<br>
 
 1️⃣ Stores Dataset → Contains store type and size for 45 stores.<br>
