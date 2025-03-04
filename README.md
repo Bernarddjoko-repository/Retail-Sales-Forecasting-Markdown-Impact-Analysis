@@ -41,11 +41,11 @@ Why is this project important?<br>
 
 🔹 1️⃣ Data Preparation
 ✅ Handled missing values:<br>
-    - Filled missing markdowns with 0 (assuming no markdown).<br>
-    - Used rolling mean for missing CPI and Unemployment data to smooth fluctuations.<br>
+   🔹 Filled missing markdowns with 0 (assuming no markdown).<br>
+   🔹 Used rolling mean for missing CPI and Unemployment data to smooth fluctuations.<br>
 
 ✅ Handled outliers:<br>
-    - Winsorization (limiting extreme values) for robust models.<br>
+   🔹Winsorization (limiting extreme values) for robust models.<br>
 
 ✅ Merged all datasets into one feature-rich dataset for analysis.<br>
 
@@ -62,8 +62,9 @@ Lag_1, Rolling_4, Rolling_12, Lag_52 to track sales trends over time.<br>
 Super Bowl, Thanksgiving, Christmas, Labor Day indicators.<br>
 
 ✅ Total Markdown Impact:
-    - Summed markdown values across different promotions.<br>
-    - Created a feature to measure markdowns during holiday weeks.<br>
+   🔹Summed markdown values across different promotions.<br>
+   🔹Created a feature to measure markdowns during holiday weeks.<br>
+
 🔹 3️⃣ Feature Selection & Scaling
 📌 Used Random Forest Feature Importance to remove low-impact variables.<br>
 📌 Dropped highly correlated features to avoid redundancy.<br>
@@ -91,19 +92,19 @@ We trained multiple models to compare performance:<br>
 📌 Exponential Smoothing (Captures seasonal sales trends).<br>
 
 ## 📌 Challenges & Solutions
-1️⃣ Limited Holiday Data
+1️⃣ Limited Holiday Data <br>
 🔹 Issue: Holidays only occur once a year, making it difficult for models to learn patterns.<br>
 🔹 Solution: Used weighted loss function to prioritize holiday weeks during training.<br>
 
-2️⃣ Extreme Outliers in Sales Data
+2️⃣ Extreme Outliers in Sales Data<br>
 🔹 Issue: Some departments had unusually high or low sales, which skewed model predictions.<br>
 🔹 Solution: Applied Winsorization and Log Transformation to reduce the impact of outliers.<br>
 
-3️⃣ Time-Based Dependencies
+3️⃣ Time-Based Dependencies<br>
 🔹 Issue: Random train-test splits would lead to data leakage and unrealistic results.<br>
 🔹 Solution: Used a time-based split (training on 2010-2011, testing on 2012).<br>
 
-4️⃣ Slow SARIMA Training
+4️⃣ Slow SARIMA Training<br>
 🔹 Issue: SARIMA took a long time to train on large datasets.<br>
 🔹 Solution: Ran initial tests on smaller samples and optimized hyperparameters.<br>
 
@@ -121,11 +122,11 @@ We trained multiple models to compare performance:<br>
 bash
 Copy
 Edit
-### Clone the Repository  
+#### Clone the Repository  
 git clone https://github.com/your-github-username/Retail-Sales-Forecasting.git  
 cd Retail-Sales-Forecasting  
 
-### Install Dependencies  
+#### Install Dependencies  
 pip install -r requirements.txt  
 
 ### Run Data Preparation & Feature Engineering  
