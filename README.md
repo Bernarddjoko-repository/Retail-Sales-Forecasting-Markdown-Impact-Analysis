@@ -39,7 +39,7 @@ Why is this project important?<br>
 
 ## 📌 Step-by-Step Approach
 
-🔹 1️⃣ Data Preparation<br>
+1️⃣ Data Preparation<br>
 ✅ Handled missing values:<br>
    🔹 Filled missing markdowns with 0 (assuming no markdown).<br>
    🔹 Used rolling mean for missing CPI and Unemployment data to smooth fluctuations.<br>
@@ -49,7 +49,7 @@ Why is this project important?<br>
 
 ✅ Merged all datasets into one feature-rich dataset for analysis.<br>
 
-🔹 2️⃣ Feature Engineering<br>
+2️⃣ Feature Engineering<br>
 We created several new features to improve model performance:<br>
 
 ✅ Time-based Features:<br>
@@ -65,18 +65,18 @@ Super Bowl, Thanksgiving, Christmas, Labor Day indicators.<br>
    🔹Summed markdown values across different promotions.<br>
    🔹Created a feature to measure markdowns during holiday weeks.<br>
 
-🔹 3️⃣ Feature Selection & Scaling<br>
+3️⃣ Feature Selection & Scaling<br>
 📌 Used Random Forest Feature Importance to remove low-impact variables.<br>
 📌 Dropped highly correlated features to avoid redundancy.<br>
 📌 Applied StandardScaler to normalize numerical features.<br>
 
-🔹 4️⃣ Time-Based Train-Test Split<br>
+4️⃣ Time-Based Train-Test Split<br>
 Since this is a time-series problem, we cannot use random splitting.<br>
 ✅ Training Data: 2010 - 2011<br>
 ✅ Testing Data: 2012<br>
 This ensures real-world predictive performance by simulating how a business would forecast future sales.<br>
 
-🔹 5️⃣ Model Training
+5️⃣ Model Training
 We trained multiple models to compare performance:<br>
 
 ✅ Machine Learning Models<br>
@@ -118,7 +118,7 @@ We trained multiple models to compare performance:<br>
 🔹 A/B Testing for Markdown Strategies → Experiment with markdown levels to optimize revenue.<br>
 🔹 Automated Model Retraining → Set up a pipeline to update predictions as new data arrives.<br>
 
-##📌 Installation & How to Run
+## 📌 Installation & How to Run
 bash
 Copy
 Edit
