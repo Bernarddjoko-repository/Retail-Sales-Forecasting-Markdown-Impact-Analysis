@@ -39,7 +39,7 @@ Why is this project important?<br>
 
 ## 📌 Step-by-Step Approach
 
-🔹 1️⃣ Data Preparation
+🔹 1️⃣ Data Preparation<br>
 ✅ Handled missing values:<br>
    🔹 Filled missing markdowns with 0 (assuming no markdown).<br>
    🔹 Used rolling mean for missing CPI and Unemployment data to smooth fluctuations.<br>
@@ -49,28 +49,28 @@ Why is this project important?<br>
 
 ✅ Merged all datasets into one feature-rich dataset for analysis.<br>
 
-🔹 2️⃣ Feature Engineering
+🔹 2️⃣ Feature Engineering<br>
 We created several new features to improve model performance:<br>
 
-✅ Time-based Features:
+✅ Time-based Features:<br>
 Year, Month, Week, Day of the Week, IsWeekend to capture seasonality.<br>
 
-✅ Lag Features:
+✅ Lag Features:<br>
 Lag_1, Rolling_4, Rolling_12, Lag_52 to track sales trends over time.<br>
 
-✅ Holiday Features:
+✅ Holiday Features:<br>
 Super Bowl, Thanksgiving, Christmas, Labor Day indicators.<br>
 
-✅ Total Markdown Impact:
+✅ Total Markdown Impact:<br>
    🔹Summed markdown values across different promotions.<br>
    🔹Created a feature to measure markdowns during holiday weeks.<br>
 
-🔹 3️⃣ Feature Selection & Scaling
+🔹 3️⃣ Feature Selection & Scaling<br>
 📌 Used Random Forest Feature Importance to remove low-impact variables.<br>
 📌 Dropped highly correlated features to avoid redundancy.<br>
 📌 Applied StandardScaler to normalize numerical features.<br>
 
-🔹 4️⃣ Time-Based Train-Test Split
+🔹 4️⃣ Time-Based Train-Test Split<br>
 Since this is a time-series problem, we cannot use random splitting.<br>
 ✅ Training Data: 2010 - 2011<br>
 ✅ Testing Data: 2012<br>
@@ -79,7 +79,7 @@ This ensures real-world predictive performance by simulating how a business woul
 🔹 5️⃣ Model Training
 We trained multiple models to compare performance:<br>
 
-✅ Machine Learning Models
+✅ Machine Learning Models<br>
 📌 Random Forest Regressor<br>
 📌 XGBoost Regressor<br>
 
@@ -87,7 +87,7 @@ We trained multiple models to compare performance:<br>
 ✅ Log Transformation to normalize skewed sales data.<br>
 ✅ Weighted Loss (Holiday weeks get 5x importance).<br>
 
-✅ Time-Series Models
+✅ Time-Series Models<br>
 📌 SARIMA (Seasonal ARIMA for long-term forecasting).<br>
 📌 Exponential Smoothing (Captures seasonal sales trends).<br>
 
@@ -129,19 +129,19 @@ cd Retail-Sales-Forecasting
 #### Install Dependencies  
 pip install -r requirements.txt  
 
-### Run Data Preparation & Feature Engineering  
+#### Run Data Preparation & Feature Engineering  
 python data_preprocessing.py  
 
-### Train Machine Learning Models  
+#### Train Machine Learning Models  
 python train_models.py  
 
-### Train Time-Series Models  
+#### Train Time-Series Models  
 python train_time_series.py  
 
-### Evaluate Model Performance  
+#### Evaluate Model Performance  
 python evaluate_models.py  
 
-### Visualize Results  
+#### Visualize Results  
 python visualize_results.py  
 
 ## 📌 Key Takeaways
